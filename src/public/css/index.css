@@ -2,24 +2,28 @@
 .todo__content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 15px;
+    padding: 10px 15px;
 }
 
 /* 成功メッセージ (#d1e7dd / #0f5132 / #badbcc) */
 .todo__alert--success {
     background-color: #d1e7dd;
     color: #0f5132;
-    border: 1px solid #badbcc;
-    padding: 15px;
-    margin-bottom: 30px;
-    border-radius: 4px;
+    padding: 10px;
+    margin: 0px;
+    width: 100%;
+}
+
+.todo__alert--success p {
+    margin: 0;
+    padding: 20px 40px;
 }
 
 /* 追加フォームエリア */
 .create-form {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin: 60px;
 }
 
 .create-form__item {
@@ -97,4 +101,15 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.todo__alert {
+    display: block;        /* 確実に要素を表示させる */
+    width: 100% !important; /* 横幅を強制的に100%にする */
+    margin: 0 !important;   /* 外側の余白を強制的にゼロにする */
+    padding: 20px 40px;    /* 中の余白（文字の周り）だけ指定 */
+    background-color: #d1e7dd; /* 薄い緑 */
+    color: #0f5132;           /* 濃い緑 */
+    box-sizing: border-box;  /* paddingを含めて100%にする */
+    border-radius: 0;        /* 角丸を消す */
 }

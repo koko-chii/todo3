@@ -43,5 +43,10 @@ class TodoController extends Controller
 
         return redirect('/')->with('message', 'Todoを削除しました');
     }
+
+    public function store(Request $request) {
+    // 保存の処理...
+        return redirect('/todos')->with('message', 'Todoを作成しました');
+    }
 }
 

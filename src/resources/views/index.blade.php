@@ -5,11 +5,13 @@
 @endsection
 
 @section('content')
-<div class="todo__content">
+@if (session('message'))
     <div class="todo__alert">
-        <p class="todo__alert--success">Todoを作成しました</p>
+        {{ session('message') }}
     </div>
+@endif
 
+<div class="todo__content">
     <div class="todo__form">
         <form class="create-form" action="/todos" method="post">
             @csrf
@@ -30,7 +32,7 @@
 
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
-                <td class="todo-table__data">{{ $todo->title }}</td>
+                <td class="todo-table__item">
                     <form class="update-form" action="/todos/update" method="post">
                         @method('PATCH')
                         @csrf

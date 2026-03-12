@@ -1,13 +1,12 @@
 .header {
     background-color: #000;
     color: #fff;
-    height: 60px;
+    height: 80px;
 }
 
 .header__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    margin: 0;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     height: 100%;

@@ -1,0 +1,36 @@
+/docker/mysql/data
+/data
+
+# ログファイル
+/docker/php/logs
+*.log
+
+### --- Laravel関連 --- ###
+# 環境設定ファイル（パスワードなどが含まれるため絶対禁止）
+.env
+.env.backup
+.env.production
+
+# 依存パッケージ（composer installで再構築できるため不要）
+/vendor
+
+# コンパイル済みのキャッシュファイル
+/storage/*.key
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+
+# 公開用ストレージ（アップロードした画像など）
+/public/storage
+
+### --- 開発ツール・OS関連 --- ###
+# macOS固有のシステムファイル
+.DS_Store
+
+# VSCodeの設定（個人設定が含まれる場合）
+.vscode/
+
+# PHPUnitのキャッシュ
+.phpunit.result.cache
