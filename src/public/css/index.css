@@ -1,0 +1,100 @@
+/* コンテンツ全体の余白 */
+.todo__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 15px;
+}
+
+/* 成功メッセージ (#d1e7dd / #0f5132 / #badbcc) */
+.todo__alert--success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+/* 追加フォームエリア */
+.create-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.create-form__item {
+    width: 80%;
+}
+
+.create-form__item-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 作成ボタン (#000 / #fff) */
+.create-form__button-submit {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* テーブルスタイル */
+.todo-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.todo-table__header {
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.todo-table__item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* 更新フォーム内のレイアウト */
+.update-form {
+    display: flex;
+    align-items: center;
+}
+
+.update-form__item {
+    width: 100%;
+    margin-right: 20px;
+}
+
+.update-form__item-input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+/* 更新ボタン (#0000ff / #fff) */
+.update-form__button-submit {
+    background-color: #0000ff;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 削除ボタン (#ff0000 / #fff) */
+.delete-form__button-submit {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
