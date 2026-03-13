@@ -18,7 +18,7 @@ class TodoController extends Controller
 
     public function update(Request $request)
     {
-       // バリデーション（空送信チェック）
+        // バリデーション（空送信チェック）
         $request->validate([
             'content' => 'required'
         ]);
@@ -45,8 +45,17 @@ class TodoController extends Controller
     }
 
     public function store(Request $request) {
-    // 保存の処理...
+
+        // ① バリデーションを追加（空欄での作成を防ぐ）
+        $request->validate(['content' => 'required']);
+
+        // ② データベースに保存する処理を追加！
+        // これがないとリストに表示されません
+        Todo::create(['content' => $request->content]);
+
+
         return redirect('/todos')->with('message', 'Todoを作成しました');
     }
+
 }
 
