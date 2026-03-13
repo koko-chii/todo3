@@ -42,17 +42,17 @@
     <div class="todo__content">
     <div class="todo__form">
         <h2 class="todo__section-title">Todo検索</h2>
-        <form class="search-form" action="/todos" method="post">
+        <form class="search-form" action="/todos" method="get">
             @csrf
             <div class="search-form__item todo-input-wrapper">
                 <input class="search-form__item-input" type="text"name="content">
             </div>
             <div class="search-form__item category-input-wrapper">
-                <input class="search-form__item-input type="text" name="category" placeholder="カテゴリ">
+                <input class="search-form__item-input" type="text" name="category" placeholder="カテゴリ">
             </div>
 
                 <div class="create-form__button">
-                <button class="search-form__button-submit" type="submit">作成</button>
+                <button class="search-form__button-submit" type="submit">検索</button>
             </div>
         </form>
     </div>
