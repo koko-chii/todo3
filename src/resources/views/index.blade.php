@@ -23,13 +23,36 @@
 
 <div class="todo__content">
     <div class="todo__form">
+        <h2 class="todo__section-title">新規作成</h2>
         <form class="create-form" action="/todos" method="post">
             @csrf
-            <div class="create-form__item">
+            <div class="create-form__item todo-input-wrapper">
                 <input class="create-form__item-input" type="text"name="content">
             </div>
-            <div class="create-form__button">
+            <div class="create-form__item category-input-wrapper">
+                <input class="create-form__item-input type="text" name="category" placeholder="カテゴリ">
+            </div>
+
+                <div class="create-form__button">
                 <button class="create-form__button-submit" type="submit">作成</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="todo__content">
+    <div class="todo__form">
+        <h2 class="todo__section-title">Todo検索</h2>
+        <form class="search-form" action="/todos" method="post">
+            @csrf
+            <div class="search-form__item todo-input-wrapper">
+                <input class="search-form__item-input" type="text"name="content">
+            </div>
+            <div class="search-form__item category-input-wrapper">
+                <input class="search-form__item-input type="text" name="category" placeholder="カテゴリ">
+            </div>
+
+                <div class="create-form__button">
+                <button class="search-form__button-submit" type="submit">作成</button>
             </div>
         </form>
     </div>
