@@ -22,10 +22,15 @@
 .todo__alert--danger {
     background-color: #f8d7da; /* 背景カラー */
     color: #842029;            /* 文字カラー */
-    border: 1px solid #f5c2c7; /* ボーダーカラー */
-    padding: 10px 40px;
+    padding: 10px 0px; /* 更新メッセージと同じpaddingに設定 */
+    padding-left: 50px;
+    margin: 0px;
     width: 100%;
-    box-sizing: border-box;
+}
+
+.todo__alert--danger ul {
+    margin: 0;
+    padding: 0;
 }
 
 .create-form {

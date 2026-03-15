@@ -23,7 +23,7 @@
 
 <div class="todo__content">
     <div class="todo__form">
-        <form class="create-form" action="/todos" method="post">
+        <form class="create-form" action="/" method="post">
             @csrf
             <div class="create-form__item">
                 <input class="create-form__item-input" type="text"name="content">
@@ -44,12 +44,11 @@
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
                 <td class="todo-table__item">
-                    <form class="update-form" action="/todos/update" method="post">
+                    <form class="update-form" action="/update" method="post">
                         @method('PATCH')
                         @csrf
                         <div class="update-form__item">
-                            <input class="update-form__item-input" type="text"
-                            name="content" value="{{ $todo->content }}">
+                            <input class="update-form__item-input" type="text" name="content" value="{{ $todo->content }}">
                             <input type="hidden" name="id" value="{{ $todo->id }}">
                         </div>
                         <div class="update-form__button">
@@ -59,7 +58,7 @@
                     </form>
                 </td>
                 <td class="todo-table__item">
-                    <form class="delete-form" action="/todos/delete" method="post">
+                    <form class="delete-form" action="/delete" method="post">
                         @method('DELETE')
                         @csrf
                         <input type="hidden" name="id" value="{{ $todo->id }}">
