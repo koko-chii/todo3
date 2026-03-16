@@ -33,7 +33,14 @@
     padding: 0;
 }
 
-.create-form {
+.todo__form-ttl {
+    margin-top: 40px;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.create-form, .search-form {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -42,14 +49,14 @@
     margin-bottom: 40px;
 }
 
-.todo__section-title {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
+.create-form__item, .search-form__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.create-form__item-input {
-    width: 800px;
+.create-form__item-input, .search-form__item-input  {
+    width: 400px;
     margin-top: 30px;
     margin-left: 50px;
     height: 50px;
@@ -59,8 +66,17 @@
     box-sizing: border-box;
 }
 
+.create-form__item-select, .search-form__item-select {
+    width: 200px;
+    height: 50px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
 /* 作成ボタン (#000 / #fff) */
-.create-form__button-submit {
+.create-form__button-submit, .search-form__button-submit  {
     background-color: #000;
     color: #fff;
     margin-top: 40px;
@@ -73,6 +89,12 @@
     font-weight: bold;
     font-size: 14px;
     white-space: nowrap;
+}
+
+.todo__section-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* テーブルスタイル */
@@ -97,13 +119,23 @@
 }
 
 .todo-table__item:nth-child(1) {
-    width: 90%; /* Todo入力欄の列を広く */
+    width: 50%;
 }
 
-.todo-table__item:nth-child(2),
-.todo-table__item:nth-child(3) {
+.todo-table__item:nth-child(2) {
+    width: 30%; /* カテゴリ表示用 */
+    font-size: 16px;
+}
+
+.todo-table__item:nth-child(3),
+.todo-table__item:nth-child(4) {
     width: 8%; /* ボタンの列を固定 */
     text-align: right;
+}
+
+.todo-table__category {
+    margin: 0;
+    color: #333;
 }
 
 /* 削除ボタンのフォームもflexで整える（念のため） */

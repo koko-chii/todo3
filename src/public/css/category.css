@@ -1,0 +1,111 @@
+/* 全体のレイアウト調整 */
+.todo__content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ⑦ 成功・エラーメッセージ */
+.todo__alert {
+    background-color: #d1e7dd; /* 薄い緑 */
+    color: #0f5132;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.todo__alert--danger {
+    background-color: #f8d7da; /* 薄い赤 */
+    color: #842029;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* ①② カテゴリ作成フォーム */
+.create-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.create-form__item {
+    width: 80%;
+}
+
+.create-form__item-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.create-form__button-submit {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* テーブルスタイル */
+.todo-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.todo-table__header {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.todo-table__row {
+    border-bottom: 1px solid #eee;
+}
+
+/* ③④⑤ 更新・削除フォーム */
+.update-form {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.update-form__item {
+    flex-grow: 1;
+}
+
+.update-form__item-input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.update-form__button-submit {
+    background-color: #0000ff; /* 青 */
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.delete-form__button-submit {
+    background-color: #ff0000; /* 赤 */
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-form__button-submit:hover,
+.delete-form__button-submit:hover,
+.create-form__button-submit:hover {
+    opacity: 0.8;
+}
+

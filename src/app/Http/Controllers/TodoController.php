@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TodoRequest;
 use Illuminate\Http\Request;
 use App\Models\Todo;
+use App\Models\Category;
 
 class TodoController extends Controller
 {
@@ -13,8 +14,10 @@ class TodoController extends Controller
         // データベースから全てのTodoを取得
         $todos = Todo::all();
 
-        // resources/views/todos/index.blade.php にデータを渡す
-        return view('index', compact('todos'));
+        $todos = Todo::with('category')->get(); // Todoを取得
+        $categories = Category::all();          // 2. カテゴリの全データを取得する
+
+        return view('index', compact('todos', 'categories'));
     }
 
     public function update(TodoRequest $request)
