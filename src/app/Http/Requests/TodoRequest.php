@@ -14,7 +14,10 @@ class TodoRequest extends FormRequest
     public function rules()
     {
         return [
-            'content' => 'required|string|max:20',];
+            'content' => 'required|string|max:20',
+            'category_id' => 'required|string|max:10',
+
+        ];
     }
 
     public function messages()
@@ -23,6 +26,10 @@ class TodoRequest extends FormRequest
             'content.required' => 'Todoを入力してください',
             'content.string'   => 'Todoを文字列で入力してください',
             'content.max'      => 'Todoを20文字以下で入力してください',
+            'category_id.required' => 'カテゴリを入力してください',
+            'category.string'       => 'カテゴリを文字列で入力してください',
+            'category.max'         => 'カテゴリを10文字以下で入力してください',
+            'name.unique'          => 'カテゴリが既に存在しています'
         ];
         }
 }

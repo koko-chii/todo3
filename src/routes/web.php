@@ -12,6 +12,7 @@ Route::patch('/update', [TodoController::class, 'update']);
 Route::delete('/delete', [TodoController::class, 'destroy']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/categories', [CategoryController::class, 'store'])->name('category.store');
 
 return view('category');
 

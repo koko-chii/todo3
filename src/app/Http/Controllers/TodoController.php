@@ -45,8 +45,6 @@ class TodoController extends Controller
 
     public function store(TodoRequest $request) {
 
-        // ② データベースに保存する処理を追加！
-        // これがないとリストに表示されません
         Todo::create(['content' => $request->content,
         'category_id' => $request->category_id
         ]);
