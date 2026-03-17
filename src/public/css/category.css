@@ -41,7 +41,7 @@
 }
 
 .create-form__item-input {
-    width: 100%;
+    width: 90%;
     height: 50px;
     padding: 0 15px;
     border: 1px solid #ccc;
@@ -55,6 +55,7 @@
     background-color: #000;
     color: #fff;
     height: 50px;
+    width: 180px;
     padding: 0px 40px;
     margin-top: 80px;
     border: none;
@@ -67,17 +68,37 @@
 /* テーブルスタイル */
 .category-table__inner {
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     border-collapse: collapse;
+}
+
+.category-table__item:first-child {
+    width: 80%;            /* 上の白い入力欄の幅と同じ比率にする */
+    text-align: left;
+}
+
+.category-table__item:last-child {
+    width: 20%;            /* 上の黒い「作成」ボタンの幅と同じ比率にする */
+    text-align: right;     /* ボタンを右端に寄せて、作成ボタンの右端と揃える */
+    vertical-align: middle;
+}
+
+.category-table__item--buttons {
+    width: 20%;      /* 上の「作成」ボタンの幅(create-form__button)に合わせる */
+    display: flex;   /* 更新と削除を横に並べる */
+    gap: 10px;       /* ボタン同士の隙間 */
+    vertical-align: middle;
 }
 
 .category-table__header {
     text-align: left;
     padding: 10px;
-    border-bottom: 2px solid #eee;
+    margin-top: 20px;
 }
 
 .category-table__row {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
 }
 
 /* ③④⑤ 更新・削除フォーム */
@@ -92,10 +113,14 @@
 }
 
 .update-form__item-input {
+    border: none!important;
+    outline: none;
+    background: transparent!important;
+    box-shadow: none;
     width: 90%;
     padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
 .update-form__button-submit {
@@ -103,7 +128,7 @@
     color: #fff;
     border: none;
     padding: 5px 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -113,7 +138,7 @@
     color: #fff;
     border: none;
     padding: 5px 15px;
-    border-radius: 4px;
+    border-radius: 2px;
     cursor: pointer;
 }
 

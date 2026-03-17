@@ -62,10 +62,6 @@
             </td>
 
             <td class="category-table__item">
-                <p class="category-table__category">{{ $category->name }}</p>
-            </td>
-
-            <td class="category-table__item">
                 <form class="delete-form" action="/delete" method="post">
                     @method('DELETE')
                     @csrf
