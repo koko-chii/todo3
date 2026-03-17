@@ -11,7 +11,6 @@ class TodoController extends Controller
 {
     public function index()
     {
-        // データベースから全てのTodoを取得
         $todos = Todo::all();
 
         $todos = Todo::with('category')->get(); // Todoを取得
@@ -48,7 +47,9 @@ class TodoController extends Controller
 
         // ② データベースに保存する処理を追加！
         // これがないとリストに表示されません
-        Todo::create(['content' => $request->content]);
+        Todo::create(['content' => $request->content,
+        'category_id' => $request->category_id
+        ]);
 
 
         return redirect('/')->with('message', 'Todoを作成しました');
