@@ -19,9 +19,42 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        Category::create($request->only(['name']));
+        $request->validate([
+        'name' => 'required|max:10',
+        ],[
+        'name.required' => 'カテゴリ名を入力してください',
+        'name.max' => 'カテゴリ名は10文字以内で入力してください',
+        ]);
 
-        return redirect('/categories')->with('message', 'カテゴリーを作成しました');
+        Category::create([
+            'name' => $request->name,
+        ]);
+
+        return redirect('/categories')->with('message', 'カテゴリを作成しました');
     }
 
+
+    public function update(Request $request)
+    {
+        $request->validate([
+        'name' => 'required',
+        ],[
+        'name.required' => 'カテゴリ名を入力してください',
+        ]);
+
+        $category = Category::find($request->id);
+        $category->update([
+        'name' => $request->name
+        ]);
+
+        return redirect('/categories')->with('message', 'カテゴリを更新しました');
+    }
+
+    public function destroy(Request $request)
+    {
+
+        Category::find($request->id)->delete();
+
+        return redirect('/categories')->with('message', 'カテゴリを削除しました');
+    }
 }

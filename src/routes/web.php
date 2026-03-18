@@ -13,7 +13,7 @@ Route::delete('/delete', [TodoController::class, 'destroy']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/categories', [CategoryController::class, 'store'])->name('category.store');
-
-return view('category');
+Route::patch('/categories/update', [CategoryController::class, 'update']);
+Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
 
 

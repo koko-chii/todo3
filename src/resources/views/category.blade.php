@@ -29,9 +29,6 @@
         @csrf
         <div class="create-form__item">
             <input class="create-form__item-input" type="text"name="name" value="{{ old('name') }}">
-            @error('name')
-                <p class="error-message">{{ $message }}</p>
-            @enderror
         </div>
 
         <div class="create-form__button">
@@ -58,7 +55,7 @@
 
             <td class="category-table__item">
                 <div class="button-group">
-                    <button class="update-form__button-submit" type="submit">更新</button>
+                    <button class="update-form__button-submit" type="submit" form="update-form-{{ $category->id }}">更新</button>
                     <form class="delete-form" action="/categories/delete" method="post">
                         @method('DELETE')
                         @csrf

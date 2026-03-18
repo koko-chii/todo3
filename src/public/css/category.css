@@ -2,30 +2,40 @@
 .category__content {
     max-width: 1000px;
     margin: 0px auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
-/* ⑦ 成功・エラーメッセージ */
-.category__alert {
-    background-color: #d1e7dd; /* 薄い緑 */
-    color: #0f5132;
-    padding: 0px;
-    text-align: center;
-    margin: 0px;
-}
-
+/* ⑦ 成功・エラーメッセージ共通設定 */
+.category__alert,
 .category__alert--danger {
-    background-color: #f8d7da; /* 薄い赤 */
-    color: #842029;
-    padding: 0px;
-    margin-top: 0px;
-    margin-bottom: 0;
-    border-radius: 2px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100vw;           /* 画面幅いっぱい */
+    position: relative;
+    left: 50%;              /* 画面中央へ */
+    transform: translateX(-50%); /* 中央配置の調整 */
+    margin: 0;              /* ヘッダーとの隙間をなくす */
+    padding: 0px 50px;
     box-sizing: border-box;
-    width: 100%;
-    display: block;
+    border-radius: 0;
 }
+
+/* 成功時（緑）の固有色 */
+.category__alert {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    min-height: 55px;
+    margin-bottom: 20px;    /* 下に余白 */
+}
+
+/* エラー時（赤）の固有色 */
+.category__alert--danger {
+    background-color: #f8d7da;
+    color: #842029;
+    min-height: 55px;
+    margin-bottom: 20px;    /* 下に余白 */
+}
+
 
 /* ①② カテゴリ作成フォーム */
 .create-form {
@@ -84,7 +94,7 @@
 }
 
 .category-table__item:last-child form {
-    display: inline-block; 
+    display: inline-block;
     vertical-align: middle;
 }
 
