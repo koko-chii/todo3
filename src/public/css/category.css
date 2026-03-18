@@ -68,27 +68,18 @@
 /* テーブルスタイル */
 .category-table__inner {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
     border-collapse: collapse;
 }
 
-.category-table__item:first-child {
-    width: 80%;            /* 上の白い入力欄の幅と同じ比率にする */
-    text-align: left;
-}
-
 .category-table__item:last-child {
-    width: 20%;            /* 上の黒い「作成」ボタンの幅と同じ比率にする */
-    text-align: right;     /* ボタンを右端に寄せて、作成ボタンの右端と揃える */
-    vertical-align: middle;
-}
-
-.category-table__item--buttons {
-    width: 20%;      /* 上の「作成」ボタンの幅(create-form__button)に合わせる */
-    display: flex;   /* 更新と削除を横に並べる */
-    gap: 10px;       /* ボタン同士の隙間 */
-    vertical-align: middle;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px; /* ここを作成ボタンの横幅に合わせる */
+    text-align: left; /* 左寄せにして作成ボタンの左端と合わせる */
+    display: flex;    /* 更新と削除を横に並べる */
+    gap: 10px;        /* ボタン同士の間隔 */
+    min-width: 150px;
 }
 
 .category-table__header {

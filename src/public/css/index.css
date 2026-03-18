@@ -5,34 +5,35 @@
     padding: 0;
 }
 
-/* 成功メッセージ (#d1e7dd / #0f5132 / #badbcc) */
+.todo__alert {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 0 20px 0;
+    padding: 0;
+    box-sizing: border-box;  /* paddingを含めて100%にする */
+    border-radius: 0;        /* 角丸を消す */
+}
+
 .todo__alert--success {
     background-color: #d1e7dd;
     color: #0f5132;
     padding: 15px 40px;
-    margin-bottom: 20px;
     width: 100%;
 }
 
 .todo__alert--danger {
-    background-color: #f8d7da; /* 背景カラー */
-    color: #842029;            /* 文字カラー */
-    padding: 0px 0px; /* 更新メッセージと同じpaddingに設定 */
-    padding-left: 50px;
-    margin: 0px;
-    width: 120%;
-}
-
-.todo__alert--danger ul {
-    margin: 0;
-    padding: 0;
-}
-
-.todo__form-ttl,
-.create-form,
-.search-form,
-.todo-table__inner {
-    margin-left: 0 !important;
+    background-color:#f8d7da;
+    color: #842029;
+    min-height: 55px;
+    padding: 0px 50px;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .todo__form-ttl {
@@ -45,11 +46,12 @@
 
 .create-form, .search-form {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 20px;
-    margin-top: 0px;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    margin-left: 50px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .create-form__item, .search-form__item {
@@ -59,22 +61,20 @@
 }
 
 .create-form__item-input, .search-form__item-input  {
-    width: 500px;
-    margin-top: 0px;
-    margin-left: 0px;
+    flex: 0 1 400px;
+    width: 400px;
     height: 50px;
     padding: 0 15px;
     border: 1px solid #ccc;
-    border-radius: 1px;
     box-sizing: border-box;
 }
 
 .create-form__item-select, .search-form__item-select {
+    flex: 0 0 200px;
     width: 200px;
     height: 50px;
     padding: 0 10px;
     border: 1px solid #ccc;
-    border-radius: 2px;
     background-color: #fff;
 }
 
@@ -82,12 +82,11 @@
 .create-form__button-submit, .search-form__button-submit  {
     background-color: #000;
     color: #fff;
-    margin-top: 20px;
-    margin-left: 70px;
+    flex: 0 0 120px;
+    margin-left: 80px;
     width: 180px; /* ボタンの幅を明示的に指定 */
     height: 50px; /* 入力欄と高さを合わせる */
     border: none;
-    border-radius: 2px;
     cursor: pointer;
     font-weight: bold;
     font-size: 14px;
@@ -102,7 +101,7 @@
 
 /* テーブルスタイル */
 .todo-table__inner {
-    width: 100%;
+    width: 90%;
     margin-left: 50px;
     border-collapse: collapse;
     font-weight: bold;
@@ -111,8 +110,7 @@
 .todo-table__header {
     text-align: left;
     font-size: 24px;
-    padding-bottom: 10px 0;
-    border-bottom: 1px solid #ccc !important; /* 薄いグレーのラインを追加 */
+    border-bottom: 1px solid #ccc
 }
 
 .todo-table__item {
@@ -120,41 +118,34 @@
     border-bottom: 1px solid #ccc;
 }
 
-.todo-table__item:nth-child(1) {
-    width: 50%;
-}
-
-.todo-table__item:nth-child(2) {
-    width: 30%; /* カテゴリ表示用 */
-    font-size: 16px;
-}
-
-.todo-table__item:nth-child(3),
-.todo-table__item:nth-child(4) {
-    width: 10%; /* ボタンの列を固定 */
+.todo-table__actions {
+    width: 250px; /* ボタン2つ分が余裕を持って入る幅 */
     text-align: right;
 }
 
-.todo-table__category {
-    margin: 0;
-    color: #333;
+.update-form__button-submit,
+.button-update {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0000ff;
 }
 
-/* 削除ボタンのフォームもflexで整える（念のため） */
-.delete-form {
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* 更新フォーム内のレイアウト */
-.update-form {
-    display: flex;
-    align-items: center;
-}
-
-.update-form__item {
-    width: 100%;
-    margin-right: 20px;
+.delete-form__button-submit {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
 }
 
 .update-form__item-input {
@@ -166,40 +157,9 @@
     outline: none;                 /* クリックした時の青い枠線を消す */
 }
 
-/* 更新ボタン (#0000ff / #fff) */
-.update-form__button-submit {
-    background-color: #0000ff;
-    color: #fff;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-/* 削除ボタン (#ff0000 / #fff) */
-.delete-form__button-submit {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-/* 更新・削除ボタン共通の調整 */
-.update-form__button-submit,
-.delete-form__button-submit {
-    white-space: nowrap; /* 文字が縦に折れないようにする */
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.todo__alert {
-    display: block;        /* 確実に要素を表示させる */
-    width: 100% !important; /* 横幅を強制的に100%にする */
-    margin: 0 !important;   /* 外側の余白を強制的にゼロにする */
-    padding: 0    /* 中の余白（文字の周り）だけ指定 */
-    box-sizing: border-box;  /* paddingを含めて100%にする */
-    border-radius: 0;        /* 角丸を消す */
-    box-sizing: border-box;
+.button-group {
+    display: flex;
+    gap: 10px;          /* ボタン間の隙間 */
+    justify-content: flex-end; /* 右寄せ */
+    align-items: center;
 }
