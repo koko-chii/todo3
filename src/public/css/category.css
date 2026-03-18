@@ -68,6 +68,8 @@
 /* テーブルスタイル */
 .category-table__inner {
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     border-collapse: collapse;
 }
 
@@ -75,11 +77,15 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 200px; /* ここを作成ボタンの横幅に合わせる */
-    text-align: left; /* 左寄せにして作成ボタンの左端と合わせる */
-    display: flex;    /* 更新と削除を横に並べる */
-    gap: 10px;        /* ボタン同士の間隔 */
-    min-width: 150px;
+    width: 30％;
+    display: table-cell;
+    text-align: right;
+    padding-right: 0;
+}
+
+.category-table__item:last-child form {
+    display: inline-block; 
+    vertical-align: middle;
 }
 
 .category-table__header {
@@ -90,6 +96,11 @@
 
 .category-table__row {
     border-bottom: 1px solid #ccc;
+}
+
+.category-table__row td:first-child {
+    width: 70%;           /* ここを大きくするとボタンが右へ寄ります */
+    padding: 10px;
 }
 
 /* ③④⑤ 更新・削除フォーム */
@@ -114,13 +125,14 @@
     border-radius: 2px;
 }
 
-.update-form__button-submit {
-    background-color: #0000ff; /* 青 */
-    color: #fff;
+.update-form__button-submit,
+.delete-form__button-submit {
+    padding: 8px 20px;
     border: none;
-    padding: 5px 15px;
     border-radius: 2px;
     cursor: pointer;
+    color: #fff;
+    font-weight: bold;
     margin-right: 10px;
 }
 
@@ -128,14 +140,19 @@
     background-color: #ff0000; /* 赤 */
     color: #fff;
     border: none;
-    padding: 5px 15px;
+    padding: 8px 20px;
     border-radius: 2px;
     cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
-.update-form__button-submit:hover,
-.delete-form__button-submit:hover,
-.create-form__button-submit:hover {
-    opacity: 0.8;
-}
+.update-form__button-submit { background-color: #0000ff; }
+.delete-form__button-submit { background-color: #ff0000; }
 
+.button-group {
+    display: flex;
+    justify-content: flex-end; /* 右端にピタッと寄せる */
+    gap: 10px;
+    align-items: center;
+}
