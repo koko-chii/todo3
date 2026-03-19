@@ -160,6 +160,6 @@
 .button-group {
     display: flex;
     gap: 10px;          /* ボタン間の隙間 */
-    justify-content: flex-end; /* 右寄せ */
     align-items: center;
+    margin-left: 70px;
 }
