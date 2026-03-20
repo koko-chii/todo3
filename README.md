@@ -1,15 +1,14 @@
-# laravel-docker-template
 
-# お問い合わせフォーム
+# Todoアプリ
 
-このリポジトリは、Laravelを使用したお問い合わせ管理システムです。
+このリポジトリは、Laravelを使用したTodoアプリです。
 
 ## 環境構築
 
 #### リポジトリをクローン
 
 ```
-git clone git@github.com:xxx/xxx.git
+git clone git@github.com:koko-chii/todo3.git
 ```
 
 #### Laravelのビルド
@@ -40,9 +39,8 @@ cp .env.example .env
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_DATABASE=laravel_db
-DB_USERNAME=phper
-DB_PASSWORD=secret
-
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 ```
 
 #### キー生成
@@ -63,19 +61,18 @@ docker-compose exec app php artisan migrate --seed
 
 言語：PHP 7.3 / 8.0 以上
 
-Webサーバー：Nginx
+Webサーバー：nginx:1.21.1
 
-データベース：MySQL
+データベース：mysql:8.0.26
 
 ## ER図
 
-![ER図](xxxx.drawio.png)
+![ER図](todo.drawio.png)
 
 ## URL
 
 アプリケーション：http://localhost
 
-管理画面：http://localhost/admin
 
 phpMyAdmin：http://localhost:8080
 

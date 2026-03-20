@@ -18,6 +18,8 @@ services:
 
   mysql:
     image: mysql:8.0.26
+    ports:            # ← これを追加
+      - "3306:3306"   # ← これを追加
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: laravel_db

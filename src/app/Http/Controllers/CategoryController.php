@@ -19,12 +19,15 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-        'name' => 'required|max:10',
-        ],[
-        'name.required' => 'カテゴリ名を入力してください',
-        'name.max' => 'カテゴリ名は10文字以内で入力してください',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required|max:10',
+            ],
+            [
+                'name.required' => 'カテゴリ名を入力してください',
+                'name.max' => 'カテゴリ名は10文字以内で入力してください',
+            ]
+        );
 
         Category::create([
             'name' => $request->name,

@@ -161,5 +161,19 @@
     display: flex;
     gap: 10px;          /* ボタン間の隙間 */
     align-items: center;
-    margin-left: 70px;
+    width: 250px;        /* 幅を十分に確保 */
+    margin-left: 0px;
+    transform: translateX(60px);
+}
+
+.button-group form {
+    display: inline-block;
+    margin: 0;           /* 余計な隙間を消す */
+}
+
+.update-form__button-submit,
+.delete-form__button-submit {
+    display: block;
+    width: 80px;         /* 幅を固定して揃える */
+    text-align: center;
 }
