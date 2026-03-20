@@ -136,33 +136,47 @@
 }
 
 .update-form__button-submit,
-.delete-form__button-submit {
+.button-update {
     padding: 8px 20px;
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.delete-form__button-submit {
-    background-color: #ff0000; /* 赤 */
-    color: #fff;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 2px;
-    cursor: pointer;
-    font-weight: bold;
     white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0000ff;
 }
 
-.update-form__button-submit { background-color: #0000ff; }
-.delete-form__button-submit { background-color: #ff0000; }
+.delete-form__button-submit {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+}
 
 .button-group {
     display: flex;
-    justify-content: flex-end; /* 右端にピタッと寄せる */
-    gap: 10px;
+    gap: 10px;          /* ボタン間の隙間 */
     align-items: center;
+    width: 250px;        /* 幅を十分に確保 */
+    margin-left: 0px;
+    transform: translateX(120px);
+}
+
+.button-group form {
+    display: inline-block;
+    margin: 0;           /* 余計な隙間を消す */
+}
+
+.update-form__button-submit,
+.delete-form__button-submit {
+    display: block;
+    width: 80px;         /* 幅を固定して揃える */
+    text-align: center;
 }
