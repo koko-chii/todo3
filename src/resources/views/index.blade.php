@@ -49,13 +49,14 @@
         <form class="search-form" action="/search" method="get">
             @csrf
             <div class="search-form__item">
-                <input class="search-form__item-input" type="text" name="keyword" value="{{ old('keyword') }}">
+                <input class="search-form__item-input" type="text" name="keyword" value="{{ old('content') }}">
             </div>
             <div class="search-form__item">
                 <select class="search-form__item-select" name="category_id">
                     <option value="">カテゴリ</option>
                     @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}"{{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}
+                    </option>
                     @endforeach
                 </select>
             </div>

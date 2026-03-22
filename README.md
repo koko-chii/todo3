@@ -10,23 +10,37 @@
 ```
 git clone git@github.com:koko-chii/todo3.git
 ```
+#### ディレクトリ移動
 
+```
+cd todo3
+```
+#### docker/php/Dockerfile ファイルの修正 １行目
+
+```
+FROM php:8.2-fpm
+```
+#### docker/php/Dockerfile 5行目に追加
+
+```
+&& curl -sL https://deb.nodesource.com/setup_18.x  | bash - \
+```
+#### docker/php/Dockerfile 6行目に追加
+
+```
+&& apt install -y nodejs \
+```
 #### Laravelのビルド
 
 ```
 docker-compose up -d --build
-```
-
-#### Laravel パッケージのダウンロード
 
 ```
-docker-compose exec app composer install
-```
+#### ディレクトリ移動
 
 ```
-docker-compose exec app npm install && npm run dev
+cd src
 ```
-
 #### .env ファイルの作成
 
 ```
@@ -37,22 +51,34 @@ cp .env.example .env
 
 ```
 DB_CONNECTION=mysql
-DB_HOST=db
+DB_HOST=mysql
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
+#### Laravel パッケージのダウンロード
 
+```
+docker-compose exec php composer install
+```
+
+```
+docker-compose exec php npm install
+```
+
+```
+docker-compose exec php npm run dev
+```
 #### キー生成
 
 ```
-docker-compose exec app php artisan key:generate
+docker-compose exec php php artisan key:generate
 ```
 
 #### マイグレーション・シーディングを実行
 
 ```
-docker-compose exec app php artisan migrate --seed
+docker-compose exec php php artisan migrate
 ```
 
 ## 使用技術（実行環境）

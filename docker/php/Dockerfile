@@ -1,9 +1,11 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
 COPY php.ini /usr/local/etc/php/
 
 RUN apt update \
-  && apt install -y default-mysql-client zlib1g-dev libzip-dev unzip \
+  && apt install -y default-mysql-client zlib1g-dev libzip-dev unzip curl \
+  && curl -sL https://deb.nodesource.com | bash - \
+  && apt install -y nodejs \
   && docker-php-ext-install pdo_mysql zip
 
 RUN curl -sS https://getcomposer.org/installer | php \
