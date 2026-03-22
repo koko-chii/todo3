@@ -69,11 +69,6 @@ docker-compose exec php chmod -R 777 storage bootstrap/cache
 ```
 docker-compose exec php php artisan migrate
 ```
-#### cssのビルド（デザインの反映）
-
-```
-docker-compose exec php npm run dev
-```
 
 ## 使用技術（実行環境）
 
