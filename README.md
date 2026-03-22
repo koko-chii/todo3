@@ -15,21 +15,6 @@ git clone git@github.com:koko-chii/todo3.git
 ```
 cd todo3
 ```
-#### docker/php/Dockerfile ファイルの修正 １行目
-
-```
-FROM php:8.2-fpm
-```
-#### docker/php/Dockerfile 5行目に追加
-
-```
-&& curl -sL https://deb.nodesource.com/setup_18.x  | bash - \
-```
-#### docker/php/Dockerfile 6行目に追加
-
-```
-&& apt install -y nodejs \
-```
 #### Laravelのビルド
 
 ```
@@ -73,6 +58,11 @@ docker-compose exec php npm run dev
 
 ```
 docker-compose exec php php artisan key:generate
+```
+#### 権限の付与
+
+```
+docker-compose exec php chmod -R 777 storage bootstrap/cache
 ```
 
 #### マイグレーション・シーディングを実行
