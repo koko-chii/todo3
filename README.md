@@ -50,10 +50,6 @@ docker-compose exec php composer install
 ```
 docker-compose exec php npm install
 ```
-
-```
-docker-compose exec php npm run dev
-```
 #### キー生成
 
 ```
@@ -62,13 +58,21 @@ docker-compose exec php php artisan key:generate
 #### 権限の付与
 
 ```
-docker-compose exec php chmod -R 777 storage bootstrap/cache
+cd ..
 ```
 
+```
+docker-compose exec php chmod -R 777 storage bootstrap/cache
+```
 #### マイグレーション・シーディングを実行
 
 ```
 docker-compose exec php php artisan migrate
+```
+#### cssのビルド（デザインの反映）
+
+```
+docker-compose exec php npm run dev
 ```
 
 ## 使用技術（実行環境）
