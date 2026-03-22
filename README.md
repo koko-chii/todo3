@@ -46,10 +46,6 @@ DB_PASSWORD=laravel_pass
 ```
 docker-compose exec php composer install
 ```
-
-```
-docker-compose exec php npm install
-```
 #### キー生成
 
 ```
