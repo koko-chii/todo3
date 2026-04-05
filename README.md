@@ -63,7 +63,7 @@ docker-compose exec php chmod -R 777 storage bootstrap/cache
 #### マイグレーション・シーディングを実行
 
 ```
-docker-compose exec php php artisan migrate
+docker-compose exec php php artisan migrate --seed"
 ```
 
 ## 使用技術（実行環境）
